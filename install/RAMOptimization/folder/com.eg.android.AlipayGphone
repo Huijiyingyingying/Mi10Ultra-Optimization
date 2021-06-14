@@ -1,0 +1,12 @@
+Process_list='com.alipay.mobile.liteprocess.ipc.IpcMsgServer
+com.alipay.mobile.liteprocess.LiteProcessService$LiteProcessService1
+com.alipay.mobile.liteprocess.LiteProcessService$LiteProcessService2
+com.alipay.mobile.liteprocess.LiteProcessService$LiteProcessService3
+com.alipay.mobile.liteprocess.LiteProcessService$LiteProcessService4
+com.alipay.mobile.liteprocess.LiteProcessService$LiteProcessService5
+com.alipay.mobile.nebulacore.GpuSandboxedProcessService0
+com.alipay.mobile.healthcommand.stepcounter.APExtStepService
+com.alipay.mobile.nebulacore.SandboxedPrivilegedProcessService0
+com.amap.api.location.APSservice
+mtopsdk.xstate.XStateService
+com.alipay.dexaop.power.RuntimePowerService'

@@ -1,0 +1,9 @@
+Process_list="com.tencent.mobileqq.mini.app.InternalAppBrandTaskPreloadReceiver
+com.tencent.mobileqq.mini.app.AppBrandTaskPreloadReceiver
+com.tencent.mobileqq.mini.app.AppBrandTaskPreloadReceiver1
+com.tencent.mobileqq.mini.app.AppBrandTaskPreloadReceiver2
+com.tencent.mobileqq.mini.app.AppBrandTaskPreloadReceiver3
+com.tencent.mobileqq.mini.app.AppBrandTaskPreloadReceiver4
+com.tencent.mobileqq.mini.app.AppBrandTaskPreloadReceiver5
+com.tencent.mobileqq.mini.app.AppBrandTaskPreloadReceiver6
+com.tencent.mobileqq.mini.app.AppBrandTaskPreloadReceiver7"

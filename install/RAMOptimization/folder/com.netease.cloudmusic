@@ -1,0 +1,6 @@
+Process_list="com.netease.cloudmusic.module.webview.BrowserPreService
+com.netease.cloudmusic.video.service.VideoPlayService
+com.netease.android.extension.servicekeeper.service.ipc.server.IPCCommunicationAndroidService
+com.netease.cloudmusic.service.LocalMusicMatchService
+com.netease.play.base.LookPreloadService
+com.netease.cloudmusic.service.PlayNannyService"
