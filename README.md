@@ -28,4 +28,5 @@ https://github.com/Huijiyingyingying/Mi10Ultra-Optimization/releases
 
 ##联系
 
+QQ: **415861099**
 QQ讨论群: **1001448224**
