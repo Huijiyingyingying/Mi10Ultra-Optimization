@@ -16,14 +16,18 @@ mktouch $config/install_log.txt
 #module.prop
 id="Mi10Ultra-Optimization"
 name="Mi10Ultra专属优化"
-version="v4.6.6(21.6.14)"
+version="v4.6.8(21.6.14)"
 versionCode="20210614"
 author="灰机嘤嘤嘤"
-description="仅针对小米10至尊纪念版优化  已安装功能: "
+description="Optimized only for XiaoMi10 Ultra. Installed features: "
 
 mkdir $MODPATH/system
+mktouch $MODPATH/module.prop
 mktouch $MODPATH/system.prop
 mktouch $MODPATH/post-fs-data.sh
+
+echo "- 更新日志 -"
+echo $(cat $MODPATH/Updata.log)
 
 echo "- 3s后刷入本模块..."
 sleep 3
@@ -98,3 +102,5 @@ rm -f $MODPATH/function.sh
 log "删除临时文件完成"
 
 echo "exit 0" >> $MODPATH/service.sh
+
+log "安装完成,请重启手机"
