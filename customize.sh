@@ -27,6 +27,7 @@ mktouch $MODPATH/post-fs-data.sh
 
 #输出更新日志
 updateLog=$(cat $MODPATH/README.md)
+echo "--- 更新日志"
 echo $updateLog
 
 sleep 0.25
