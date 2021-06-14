@@ -22,7 +22,6 @@ author="灰机嘤嘤嘤"
 description="Optimized only for XiaoMi10 Ultra. Installed features: "
 
 mkdir $MODPATH/system
-mktouch $MODPATH/module.prop
 mktouch $MODPATH/system.prop
 mktouch $MODPATH/post-fs-data.sh
 
