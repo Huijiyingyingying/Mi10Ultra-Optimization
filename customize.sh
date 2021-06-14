@@ -25,8 +25,7 @@ mkdir $MODPATH/system
 mktouch $MODPATH/system.prop
 mktouch $MODPATH/post-fs-data.sh
 
-echo "- 更新日志 -"
-echo $(cat $MODPATH/Update.log)
+echo $(cat $MODPATH/UPDATE.md)
 
 echo "- 3s后刷入本模块..."
 sleep 3
