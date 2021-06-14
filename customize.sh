@@ -82,8 +82,8 @@ fi
 [[ -d $config/script ]] && rm -rf $config/script
 mkdir $config/script
 cp -f $MODPATH/folder/script/* $config/script/
-log "已生成小脚本"
-echo "- 小脚本位于Android/Optimization/script文件夹中"
+log "已生成脚本"
+echo "- 脚本位于Android/Optimization/script文件夹中"
 
 #写入module.prop
 echo "#module.prop
@@ -98,6 +98,7 @@ description=$description" > $MODPATH/module.prop
 rm -rf $MODPATH/install
 rm -rf $MODPATH/folder
 rm -f $MODPATH/function.sh
+
 log "删除临时文件完成"
 
 echo "exit 0" >> $MODPATH/service.sh
