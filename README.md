@@ -1,8 +1,8 @@
-#Mi10Ultra-Optimization
+# Mi10Ultra-Optimization
 
 仅为小米10至尊纪念版优化,追求顺滑流畅,偏中度省电
 
-##功能
+## 功能
 
 - 更改充电动画为 `粒子特效充电动画` (提取于 **余空** 的模块)
 - Doze深度息屏,减少待机功耗,增加续航
@@ -22,10 +22,10 @@
 - WiFiBonding,通过修改WCNSS_qcom_cfg.ini,让WiFi带宽提速至最大
 - 沉浸小白条
 
-##下载
+## 下载
 
 https://github.com/Huijiyingyingying/Mi10Ultra-Optimization/releases
 
-##联系
+## 联系
 
 QQ讨论群: **1001448224**
