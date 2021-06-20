@@ -27,6 +27,7 @@ system/vendor/etc/perf/thermalboost.conf"
 
 for list in $Thermal_list; do
   mktouch $MODPATH/$list
+  set_perm_recursive $MODPATH/$list 0 0 0755 0644
 log "已删除文件 $list"
 sleep 0.05
 done

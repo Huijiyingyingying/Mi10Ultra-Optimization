@@ -26,8 +26,8 @@ else
   	source $config/Replace.txt
   	for Replace_list in $REPLACE_1; do
   		mktouch $MODPATH$Replace_list/.replace
-  	log "已精简: $Replace_list"
-  	sleep 0.05
+      set_perm_recursive $MODPATH$Replace_list 0 0 0755 0644
+  	  log "已精简: $Replace_list"
   	done
   else
   	abort "- 修改完再重新安装吧~"

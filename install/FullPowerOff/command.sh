@@ -12,6 +12,9 @@ echo "chown root:root $FILE2/script/FullPowerOff.sh" >> $MODPATH/service.sh
 echo "chmod 777 $FILE2/script/FullPowerOff.sh" >> $MODPATH/service.sh
 echo "nohup $FILE2/script/FullPowerOff.sh &" >> $MODPATH/service.sh
 
+echo "echo 0 > /sys/class/power_supply/battery/input_suspend" >> $MODPATH/uninstall.sh
+echo "echo 1 > /sys/class/power_supply/battery/charging_enabled" >> $MODPATH/uninstall.sh
+
 if [[ -e $MODPATH/folder/Inherit ]]; then
   if [[ -e $config/FullPowerOff.txt ]]; then
     log "已跳过 替换新的FullPowerOff.txt"

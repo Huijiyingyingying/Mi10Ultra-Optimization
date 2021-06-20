@@ -9,6 +9,7 @@ REPLACE_miuiplus="/system/priv-app/Mirror
 
 for Replace_list in $REPLACE_miuiplus; do
   mktouch $MODPATH$Replace_list/.replace
-log "已精简: $Replace_list"
-sleep 0.05
+  set_perm_recursive $MODPATH/$Replace_list 0 0 0755 0644
+  log "已精简: $Replace_list"
+  sleep 0.05
 done

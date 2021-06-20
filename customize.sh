@@ -15,11 +15,11 @@ mktouch $config/install_log.txt
 
 #module.prop
 id="Mi10Ultra-Optimization"
-name="Mi10Ultra专属优化"
-version="v4.6.8(21.6.14)"
-versionCode="20210614"
+name="Mi10UltraOptimization"
+version="v4.8.0(21.6.20)"
+versionCode="20210620"
 author="灰机嘤嘤嘤"
-description="Optimized only for XiaoMi10 Ultra. Installed features: "
+description="Optimized only for Mi10Ultra. Installed features: "
 
 mkdir $MODPATH/system
 mktouch $MODPATH/system.prop
