@@ -16,7 +16,7 @@ unset a b
 
 until false; do
 	source $config/FullPowerOff.txt
-	sleep 5
+	sleep $Script_Delay
 	[[ -f $Folder ]] && Status=`cat $Folder`
 	[[ -f $Folder2 ]] && Status2=`cat $Folder2`
 	if [[ $(cat $Power) -ge $Power_Stop ]]; then

@@ -9,8 +9,7 @@
 app="com.tencent.mobileqq
 com.tencent.tim
 com.miui.powerkeeper
-com.tencent.mm
-com.netease.cloudmusic"
+com.tencent.mm"
 
 #每次执行的时间 单位为秒
 white_time=3600

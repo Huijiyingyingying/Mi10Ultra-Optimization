@@ -4,30 +4,114 @@ config="/sdcard/Android/Optimization"
 
 source $MODPATH/function.sh
 
-Thermal_list="system/vendor/bin/mi_thermald
-system/vendor/bin/thermal-engine
-system/vendor/etc/thermal-4k.conf
-system/vendor/etc/thermal-8k.conf
-system/vendor/etc/thermal-camera.conf
-system/vendor/etc/thermal-chg-only.conf
-system/vendor/etc/thermal-class0.conf
-system/vendor/etc/thermal-engine.conf
-system/vendor/etc/thermal-map.conf
-system/vendor/etc/thermal-mgame.conf
-system/vendor/etc/thermal-navigation.conf
-system/vendor/etc/thermal-nolimits.conf
-system/vendor/etc/thermal-normal.conf
-system/vendor/etc/thermal-phone.conf
-system/vendor/etc/thermal-tgame.conf
-system/vendor/etc/thermal-video.conf
-system/vendor/etc/thermald-devices.conf
-system/vendor/etc/init/init.mi_thermald.rc
-system/vendor/etc/init/init_thermal-engine.rc
-system/vendor/etc/perf/thermalboost.conf"
+function remove_thermal() {
+ echo "exit 0" > $1
+ chmod 7777 $1
+ log "已生成文件 $1"
+}
 
-for list in $Thermal_list; do
-  mktouch $MODPATH/$list
-  set_perm_recursive $MODPATH/$list 0 0 0755 0644
-log "已删除文件 $list"
-sleep 0.05
+dirlist="/system/etc
+/system/vendor/etc
+/system/vendor/lib
+/system/vendor/lib64
+/system/bin
+/system/vendor/bin
+/system/vendor/lib64/hw
+/system/vendor/lib/hw
+/system/lib64"
+
+for i in $dirlist; do
+  mkdir -p $MODPATH$i
+  chmod 7777 $i
 done
+
+if [ -e /system/etc/thermald.xml ] ; then
+  remove_thermal $MODPATH/system/etc/thermald.xml
+  remove_thermal $MODPATH/system/etc/thermald_performance.xml
+  remove_thermal $MODPATH/system/etc/thermald_performance_qcoff.xml
+  remove_thermal $MODPATH/system/etc/thermald_qcoff.xml
+fi
+
+if [ -e /system/bin/thermal-engine ] ; then
+  remove_thermal $MODPATH/system/bin/thermal-engine
+fi
+
+if [ -e /system/vendor/bin/thermal-engine ] ; then
+ remove_thermal $MODPATH/system/vendor/bin/thermal-engine
+fi
+
+if [ -e /system/bin/thermald ] ; then
+  remove_thermal $MODPATH/system/bin/thermald
+  remove_thermal $MODPATH/system/vendor/bin/thermald
+fi
+
+if [ -e /system/bin/thermalserviced ] ; then
+  remove_thermal $MODPATH/system/bin/thermalserviced
+  remove_thermal $MODPATH/system/vendor/bin/thermalserviced
+fi
+
+if [ -e /system/vendor/lib/libthermalioctl.so ] ; then
+  remove_thermal $MODPATH/system/vendor/lib/libthermalioctl.so
+  remove_thermal $MODPATH/system/vendor/lib/libthermalclient.so
+  remove_thermal $MODPATH/system/vendor/lib64/libthermalioctl.so
+  remove_thermal $MODPATH/system/vendor/lib64/libthermalclient.so
+fi
+
+if [ -e /system/vendor/etc/perf/perfboostconfig.xml ] ; then
+  remove_thermal $MODPATH/system/vendor/etc/perf/perfboostconfig.xml
+fi
+
+for tso in $(ls /system/vendor/lib/hw/thermal.*.so /system/vendor/lib64/hw/thermal.*.so)
+do
+  remove_thermal ${MODPATH}${tso}
+done
+
+for tconf in $(ls /system/etc/thermal-engine*.conf /system/vendor/etc/thermal-engine*.conf)
+do
+  remove_thermal ${MODPATH}${tconf}
+done
+
+for tdconf in $(ls /system/etc/thermald-*.conf /system/vendor/etc/thermald-*.conf)
+do
+  remove_thermal ${MODPATH}${tdconf}
+done
+
+for mtk_conf in $(ls /system/etc/thermald-*.conf /system/vendor/etc/thermal-*.conf)
+do
+  remove_thermal ${MODPATH}${mtk_conf}
+done
+
+if [ -d /system/etc/.tp/ ] ; then
+  mkremove_thermal $MODPATH/system/etc/.tp/.replace
+fi
+
+if [ -d /system/vendor/etc/.tp/ ] ; then
+  mkremove_thermal $MODPATH/system/vendor/etc/.tp/.replace
+fi
+
+if [ -d /system/etc/.tp0/ ] ; then
+  mkdir -p $MODPATH/system/etc/.tp0/
+  chmod 7777 $MODPATH/system/etc/.tp0
+  for mtt in $(ls /system/etc/.tp0/thermal.*.xml)
+  do
+    remove_thermal ${MODPATH}${mtt}
+  done
+fi
+
+if [ -e /system/lib64/libthermalcallback.so ] ; then
+  remove_thermal $MODPATH/system/lib64/libthermalcallback.so
+  remove_thermal $MODPATH/system/lib64/libthermalservice.so
+fi
+
+if [ -e /system/bin/thermalserviced ] ; then
+  mkdir -p ${MODPATH}/system/bin
+  chmod 7777 ${MODPATH}/system/bin
+  remove_thermal $MODPATH/system/bin/thermalserviced
+fi
+
+if [ -d /data/vendor/thermal/ ] ; then
+  chmod -R 7777 /data/vendor/thermal/
+  rm -rf /data/vendor/thermal/config
+  remove_thermal /data/vendor/thermal/config
+  chmod 0000 /data/vendor/thermal/config
+fi
