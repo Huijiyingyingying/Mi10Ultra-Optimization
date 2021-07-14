@@ -27,20 +27,9 @@ echo "debug.gralloc.enable_fb_ubwc=1" >> $MODPATH/system.prop
 echo "ro.data.large_tcp_window_size=true" >> $MODPATH/system.prop
 
 #开启优化SurfaceFlinger缓冲区
-echo "debug.sf.use_phase_offsets_as_durations=1
-debug.sf.late.sf.duration=10500000
-debug.sf.late.app.duration=20500000
-debug.sf.early.sf.duration=21000000
-debug.sf.early.app.duration=16500000
-debug.sf.earlyGl.sf.duration=13500000
-debug.sf.earlyGl.app.duration=21000000
-ro.sf.blurs_are_expensive=1
-ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
-ro.surface_flinger.max_frame_buffer_acquired_buffers=3
-ro.surface_flinger.max_virtual_display_dimension=4096
-ro.surface_flinger.protected_contents=true
-ro.surface_flinger.supports_background_blur=1
-ro.surface_flinger.use_color_management=1" >> $MODPATH/system.prop
+echo "debug.sf.latch_unsignaled=1
+debug.sf.disable_backpressure=1
+windowsmgr.max_events_per_sec=1000" >> $MODPATH/system.prop
 
 #VM 虚拟堆大小（Dalvik优化）; 提高 RAM
 echo "dalvik.vm.startheapsize=512m
