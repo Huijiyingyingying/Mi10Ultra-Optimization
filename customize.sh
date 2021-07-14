@@ -16,8 +16,8 @@ mktouch $config/install_log.txt
 #module.prop
 id="Mi10Ultra-Optimization"
 name="Mi10UltraOptimization"
-version="v4.9.0(21.6.27)"
-versionCode="20210627"
+version="v5.0.0(21.7.15)"
+versionCode="20210715"
 author="灰机嘤嘤嘤"
 description="Optimized only for Mi10Ultra. Installed features: "
 
@@ -97,6 +97,7 @@ description=$description" > $MODPATH/module.prop
 rm -rf $MODPATH/install
 rm -rf $MODPATH/folder
 rm -f $MODPATH/function.sh
+rm -f $MODPATH/UPDATE.md
 
 log "删除临时文件完成"
 

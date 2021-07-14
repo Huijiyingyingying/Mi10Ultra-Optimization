@@ -5,6 +5,14 @@ config="/sdcard/Android/Optimization"
 
 source $MODPATH/function.sh
 
+set_value() {
+    if [[ -f "$2" ]];then
+        chmod 0777 "$2" 2>/dev/null
+        chmod u+x "$2" 2>/dev/null
+        echo "$1" > "$2" && chmod 0644 "$2" || log "修改"$2"失败！"
+    fi
+}
+
 #关闭强制使用软件GLES渲染
 echo "persist.sys.force_sw_gles=0" >> $MODPATH/system.prop
 
@@ -19,9 +27,20 @@ echo "debug.gralloc.enable_fb_ubwc=1" >> $MODPATH/system.prop
 echo "ro.data.large_tcp_window_size=true" >> $MODPATH/system.prop
 
 #开启优化SurfaceFlinger缓冲区
-echo "debug.sf.latch_unsignaled=1
-debug.sf.disable_backpressure=1
-windowsmgr.max_events_per_sec=1000" >> $MODPATH/system.prop
+echo "debug.sf.use_phase_offsets_as_durations=1
+debug.sf.late.sf.duration=10500000
+debug.sf.late.app.duration=20500000
+debug.sf.early.sf.duration=21000000
+debug.sf.early.app.duration=16500000
+debug.sf.earlyGl.sf.duration=13500000
+debug.sf.earlyGl.app.duration=21000000
+ro.sf.blurs_are_expensive=1
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+ro.surface_flinger.max_virtual_display_dimension=4096
+ro.surface_flinger.protected_contents=true
+ro.surface_flinger.supports_background_blur=1
+ro.surface_flinger.use_color_management=1" >> $MODPATH/system.prop
 
 #VM 虚拟堆大小（Dalvik优化）; 提高 RAM
 echo "dalvik.vm.startheapsize=512m
@@ -40,3 +59,39 @@ echo "persist.vendor.radio.add_power_save=1" >> $MODPATH/system.prop
 #开启小米GNSS增强选项
 setprop persist.vendor.gnss.hpLocSetUI 1
 echo "setprop persist.vendor.gnss.hpLocSetUI 0" >> $MODPATH/uninstall.sh
+
+#减轻低内存Kill后台机制
+set_value 0 /sys/module/lowmemorykiller/parameters/enable_lmk
+set_value 0 /sys/module/lowmemorykiller/parameters/debug_level
+set_value 100 /proc/sys/vm/swappiness
+set_value 102400 /proc/sys/vm/extra_free_kbytes
+set_value 256  /proc/sys/vm/watermark_scale_factor
+
+#内存调控
+echo "ro.vendor.qti.sys.fw.bg_apps_limit=600
+ro.vendor.qti.sys.fw.bservice_enable=true
+ro.vendor.qti.sys.fw.bservice_limit=20
+persist.service.crash.enable=0
+ro.vendor.qti.sys.fw.use_trim_settings=false
+#ro.vendor.qti.sys.fw.empty_app_percent=50
+#ro.vendor.qti.sys.fw.trim_empty_percent=100
+#ro.vendor.qti.sys.fw.trim_cache_percent=100
+#ro.vendor.qti.sys.fw.trim_enable_memory=2147483648"  >> $MODPATH/system.prop
+
+#加快安装应用速度
+echo "ro.miui.pm.install.speedinstall=/data/apk-tmp" >> $MODPATH/system.prop
+
+#加快dex2oat编译的速度
+echo "dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5,6,7
+dalvik.vm.boot-dex2oat-threads=8
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7
+dalvik.vm.dex2oat-threads=8
+dalvik.vm.dex2oat64.enabled=true
+dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7
+dalvik.vm.image-dex2oat-threads=8" >> $MODPATH/system.prop
+
+#开启iorap功能(加快应用冷启动)
+echo "ro.iorapd.enable=true
+iorapd.perfetto.enable=true
+iorapd.readahead.enable=true
+ro.vendor.perf.scroll_opt=true"  >> $MODPATH/system.prop
