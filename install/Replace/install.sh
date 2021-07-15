@@ -52,8 +52,7 @@ Install_Msg="可自定义编辑,代码在Android/Optimization/Replace.txt中
 #米币支付#/system/app/PaymentService
 #小米闻声#/system/app/MIUIAccessibility
 #AI虚拟助手（MIUI12.5）#/system/product/app/aiasst_service
-#传送门#/system/priv-app/ContentExtension
-#常用语#/system/app/MIUIFrequentPhrase"
+#传送门#/system/priv-app/ContentExtension"
 
 #是否需要前提条件(条件命令写在子目录Condition.sh)(True/False)
 Install_Condition="False"

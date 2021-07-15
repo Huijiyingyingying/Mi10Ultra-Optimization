@@ -6,13 +6,13 @@ REPLACE_1="/system/app/GFDelmarSetting
 /system/app/Cit
 /system/app/talkback
 /system/app/AntHalService
-/system_ext/product/priv-app/EmergencyInfo
+/system_ext/priv-app/EmergencyInfo
 /system/priv-app/MiRcs
 /system/app/WMService
 /system/app/WAPPushManager
 /system/app/Traceur
 /system/app/MiuiBugReport
-/system/priv-app/MiService
+/system/priv-app/MIService
 /system/app/MiuiDaemon
 /system/app/Userguide
 /system/priv-app/UserDictionaryProvider
@@ -28,7 +28,8 @@ REPLACE_1="/system/app/GFDelmarSetting
 /system/app/HybridPlatform
 /system/app/goodix_sz
 /system/app/Music
-/system/app/MiuiPrintSpoolerBete
+/system/app/MiuiPrintSpoolerBeta
+/system/priv-app/BuiltInPrintService
 /system/app/MIUITouchAssistant
 /system/priv-app/QuickSearchBox
 /system/priv-app/YellowPage
@@ -41,8 +42,7 @@ REPLACE_1="/system/app/GFDelmarSetting
 /system/app/PaymentService
 /system/app/MIUIAccessibility
 /system/product/app/aiasst_service
-/system/priv-app/ContentExtension
-/system/app/MIUIFrequentPhrase"
+/system/priv-app/ContentExtension"
 
 #Goodix指纹（出厂检测指纹用的，没任何影响，新路径）#/system/app/GFDelmarSetting
 #联发科USIM卡应用（每次开机都提醒，没啥用处又占内存）#/system/priv-app/Stk1
@@ -60,7 +60,7 @@ REPLACE_1="/system/app/GFDelmarSetting
 #/system/app/WAPPushManager
 #系统跟踪（无关痛痒的生成systrace报告，精简可提升流畅度）#/system/app/Traceur
 #用户反馈#/system/app/MiuiBugReport
-#服务与反馈#/system/priv-app/MiService
+#服务与反馈#/system/priv-app/MIService
 #用户信息收集#/system/app/MiuiDaemon
 #用户手册#/system/app/Userguide
 #用户字典#/system/priv-app/UserDictionaryProvider
@@ -92,4 +92,3 @@ REPLACE_1="/system/app/GFDelmarSetting
 #小米闻声#/system/app/MIUIAccessibility
 #AI虚拟助手（MIUI12.5）#/system/product/app/aiasst_service
 #传送门#/system/priv-app/ContentExtension
-#常用语#/system/app/MIUIFrequentPhrase
