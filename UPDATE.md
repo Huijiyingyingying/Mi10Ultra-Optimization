@@ -1,4 +1,6 @@
 ## 更新内容
 
-- 更新 Replace 功能,修复一些无法精简应用的问题
-- 本版本需要手动删除Replace和Frozen配置文件以达到更新的目的
+- 新增 Installer 功能(替换旧版应用包管理组件)
+- 移除 加快dex2oat编译的速度
+- 修复 OtherOptimization 功能,减轻低内存Kill后台机制修改错误的问题
+- 移除 Charge 功能

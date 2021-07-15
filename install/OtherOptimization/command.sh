@@ -5,14 +5,6 @@ config="/sdcard/Android/Optimization"
 
 source $MODPATH/function.sh
 
-set_value() {
-    if [[ -f "$2" ]];then
-        chmod 0777 "$2" 2>/dev/null
-        chmod u+x "$2" 2>/dev/null
-        echo "$1" > "$2" && chmod 0644 "$2" || log "修改"$2"失败！"
-    fi
-}
-
 #关闭强制使用软件GLES渲染
 echo "persist.sys.force_sw_gles=0" >> $MODPATH/system.prop
 
@@ -50,11 +42,18 @@ setprop persist.vendor.gnss.hpLocSetUI 1
 echo "setprop persist.vendor.gnss.hpLocSetUI 0" >> $MODPATH/uninstall.sh
 
 #减轻低内存Kill后台机制
-set_value 0 /sys/module/lowmemorykiller/parameters/enable_lmk
+echo 'set_value() {
+  if [[ -f "$2" ]];then
+      chmod 0777 "$2" 2>/dev/null
+      chmod u+x "$2" 2>/dev/null
+      echo "$1" > "$2" && chmod 0644 "$2" || log "修改"$2"失败！"
+  fi
+}' >> $MODPATH/service.sh
+echo "set_value 0 /sys/module/lowmemorykiller/parameters/enable_lmk
 set_value 0 /sys/module/lowmemorykiller/parameters/debug_level
 set_value 100 /proc/sys/vm/swappiness
 set_value 102400 /proc/sys/vm/extra_free_kbytes
-set_value 256  /proc/sys/vm/watermark_scale_factor
+set_value 256  /proc/sys/vm/watermark_scale_factor" >> $MODPATH/service.sh
 
 #内存调控
 echo "ro.vendor.qti.sys.fw.bg_apps_limit=600
@@ -69,15 +68,6 @@ ro.vendor.qti.sys.fw.use_trim_settings=false
 
 #加快安装应用速度
 echo "ro.miui.pm.install.speedinstall=/data/apk-tmp" >> $MODPATH/system.prop
-
-#加快dex2oat编译的速度
-echo "dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5,6,7
-dalvik.vm.boot-dex2oat-threads=8
-dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7
-dalvik.vm.dex2oat-threads=8
-dalvik.vm.dex2oat64.enabled=true
-dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7
-dalvik.vm.image-dex2oat-threads=8" >> $MODPATH/system.prop
 
 #开启iorap功能(加快应用冷启动)
 echo "ro.iorapd.enable=true
