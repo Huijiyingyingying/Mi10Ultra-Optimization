@@ -1,3 +1,5 @@
 ## 更新内容
 
-- 更新 OtherOptimization 功能,修复 开启优化SurfaceFlinger缓冲区后导致卡米的问题
+- 更新 Replace 功能,修复一些无法精简应用的问题
+- 更新 Frozen 功能,删除一些不需要冻结的应用
+- 本版本需要手动删除Replace和Frozen配置文件以达到更新的目的

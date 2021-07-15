@@ -10,7 +10,6 @@ com.miui.migameservice
 com.miui.maintenancemode
 com.miui.vpnsdkmanager
 com.miui.cloudbackup
-com.android.emergency
 com.miui.greenguard
 com.qualcomm.qti.poweroffalarm
 com.miui.core
@@ -20,9 +19,9 @@ com.android.internal.display.cutout.emulation.hole
 com.android.internal.display.cutout.emulation.tall
 com.android.internal.display.cutout.emulation.waterfall
 com.android.htmlviewer
-com.xiaomi.macro
 com.google.android.syncadapters.contacts
-com.google.android.onetimeinitializer"
+com.google.android.onetimeinitializer
+"
 
 #无障碍套件#com.google.android.marvin.talkback
 #SIM卡联系人#com.qualcomm.qti.simcontacts
@@ -30,7 +29,6 @@ com.google.android.onetimeinitializer"
 #游戏高能时刻#com.miui.migameservice
 #维修模式#com.miui.maintenancemode
 #桌面云备份#com.miui.cloudbackup
-#急救信息#com.android.emergency
 #安全守护服务#com.miui.greenguard
 #关机闹钟#com.qualcomm.qti.poweroffalarm
 #MIUISDK#com.miui.core
@@ -40,4 +38,3 @@ com.google.android.onetimeinitializer"
 #长型刘海屏#com.android.internal.display.cutout.emulation.tall
 #瀑布刘海屏#com.android.internal.display.cutout.emulation.waterfall
 #HTML查看器#com.android.htmlviewer
-#自动连招#com.xiaomi.macro

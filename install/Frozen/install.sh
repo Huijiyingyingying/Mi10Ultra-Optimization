@@ -12,7 +12,6 @@ SIM卡联系人#com.qualcomm.qti.simcontacts
 游戏高能时刻#com.miui.migameservice
 维修模式#com.miui.maintenancemode
 桌面云备份#com.miui.cloudbackup
-急救信息#com.android.emergency
 安全守护服务#com.miui.greenguard
 关机闹钟#com.qualcomm.qti.poweroffalarm
 MIUISDK#com.miui.core
@@ -21,8 +20,7 @@ MIUISDK#com.miui.core
 打孔屏#com.android.internal.display.cutout.emulation.hole
 长型刘海屏#com.android.internal.display.cutout.emulation.tall
 瀑布刘海屏#com.android.internal.display.cutout.emulation.waterfall
-HTML查看器#com.android.htmlviewer
-自动连招#com.xiaomi.macro"
+HTML查看器#com.android.htmlviewer"
 #是否需要前提条件(条件命令写在子目录Condition.sh)(True/False)
 Install_Condition="False"
 #输出在description,不需输出为空即可
