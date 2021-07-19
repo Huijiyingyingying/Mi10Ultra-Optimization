@@ -81,7 +81,7 @@ REPLACE_1="/system/app/GFDelmarSetting
 #投屏服务（4个）
 #/system/app/MiPlayClient
 #/system/app/MiLink
-/system/app/MiLinkService2
+#/system/app/MiLinkService2
 #/system/priv-app/WfdService
 #小米智能卡（和NFC相关）#/system/app/TSMClient
 #钱包#/system/app/MIpay
