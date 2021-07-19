@@ -18,7 +18,7 @@ log() {
   done
   if [[ $number -ge 31 ]]; then
     echo "$time 检测到log文件夹已有31个日志文件" >> $config/log/$data$txt
-    find $config/log -mtime +30 -type f -name *.txt | xargs rm -rf
-    echo "$time 已成功清除30天之前的日志..." >> $config/log/$data$txt
+    find $config/log -mtime +29 -type f -name *.txt | xargs rm -rf
+    echo "$time 已成功清除29天之前的日志..." >> $config/log/$data$txt
   fi
 }
