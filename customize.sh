@@ -16,7 +16,7 @@ mktouch $config/install_log.txt
 #module.prop
 id="Mi10Ultra-Optimization"
 name="Mi10UltraOptimization"
-version="v5.1.3(21.07.20)"
+version="v5.1.4(21.07.20)"
 versionCode="20210720"
 author="灰机嘤嘤嘤"
 description="Optimized only for Mi10Ultra. Installed features: "
@@ -81,6 +81,7 @@ fi
 [[ -d $config/script ]] && rm -rf $config/script
 mkdir $config/script
 cp -f $MODPATH/folder/script/* $config/script/
+cp -f $MODPATH/folder/script/config/* $config/script/config
 log "已生成脚本"
 echo "- 脚本位于Android/Optimization/script文件夹中"
 
