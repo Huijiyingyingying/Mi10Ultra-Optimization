@@ -60,11 +60,7 @@ echo "ro.vendor.qti.sys.fw.bg_apps_limit=600
 ro.vendor.qti.sys.fw.bservice_enable=true
 ro.vendor.qti.sys.fw.bservice_limit=20
 persist.service.crash.enable=0
-ro.vendor.qti.sys.fw.use_trim_settings=false
-#ro.vendor.qti.sys.fw.empty_app_percent=50
-#ro.vendor.qti.sys.fw.trim_empty_percent=100
-#ro.vendor.qti.sys.fw.trim_cache_percent=100
-#ro.vendor.qti.sys.fw.trim_enable_memory=2147483648"  >> $MODPATH/system.prop
+ro.vendor.qti.sys.fw.use_trim_settings=false"  >> $MODPATH/system.prop
 
 #加快安装应用速度
 echo "ro.miui.pm.install.speedinstall=/data/apk-tmp" >> $MODPATH/system.prop
