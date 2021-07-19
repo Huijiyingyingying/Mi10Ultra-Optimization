@@ -4,9 +4,7 @@ REPLACE_1="/system/app/GFDelmarSetting
 /system/app/BasicDreams
 /system/app/ModemTestBox
 /system/app/Cit
-/product/app/talkback
 /system/app/AntHalService
-/system_ext/priv-app/EmergencyInfo
 /system/priv-app/MiRcs
 /system/app/WMService
 /system/app/WAPPushManager
@@ -19,7 +17,6 @@ REPLACE_1="/system/app/GFDelmarSetting
 /system/priv-app/BlockedNumberProvider
 /system/app/Stk
 /system/app/SimAppDialog
-/system_ext/app/SimContact
 /system/app/CatchLog
 /system/app/AnalyticsCore
 /system/app/MSA
@@ -55,9 +52,7 @@ REPLACE_1="/system/app/GFDelmarSetting
 #/system/product/app/PhotoTable
 #MODEM测试工具（官方维修人员专用）#/system/app/ModemTestBox
 #cit硬件功能检测（官方维修人员专用）#/system/app/Cit
-#残疾人无障碍服务#/product/app/talkback
 #天线服务#/system/app/AntHalService
-#急救信息（无需用到且接口已被废除）#/system_ext/priv-app/EmergencyInfo
 #小米免费短信服务（大概已知是移动对移动发送短信可免费，实用性=0且特别耗电）#/system/priv-app/MiRcs
 #推送服务（两个，没任何影响）
 #/system/app/WMService
@@ -71,7 +66,6 @@ REPLACE_1="/system/app/GFDelmarSetting
 #存储已屏蔽的号码（无任何影响）#/system/priv-app/BlockedNumberProvider
 #高通USIM卡应用（每次开机都提醒，没啥用处又占内存）#/system/app/Stk
 #SIM日志（无用）#/system/app/SimAppDialog
-#SIM联系人（现在谁还用sim卡存储联系人号码..）#/system_ext/app/SimContact
 #反馈bug时收集日志#/system/app/CatchLog
 #广告组件（两个）
 #/system/app/AnalyticsCore

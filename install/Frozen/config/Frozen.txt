@@ -16,6 +16,9 @@ com.android.internal.display.cutout.emulation.tall
 com.android.internal.display.cutout.emulation.waterfall
 com.google.android.syncadapters.contacts
 com.google.android.onetimeinitializer
+com.android.emergencyv
+com.google.android.marvin.talkback
+com.qualcomm.qti.simcontacts
 "
 
 #游戏高能时刻#com.miui.migameservice
@@ -28,3 +31,6 @@ com.google.android.onetimeinitializer
 #打孔屏#com.android.internal.display.cutout.emulation.hole
 #长型刘海屏#com.android.internal.display.cutout.emulation.tall
 #瀑布刘海屏#com.android.internal.display.cutout.emulation.waterfall
+#急救信息#com.android.emergency
+#Android无障碍套件#com.google.android.marvin.talkback
+#SIM卡联系人#com.qualcomm.qti.simcontacts

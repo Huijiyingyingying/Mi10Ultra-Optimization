@@ -15,7 +15,11 @@ Install_Msg="可自行解冻,只在安装程序中冻结
 #双刘海屏#com.android.internal.display.cutout.emulation.double
 #打孔屏#com.android.internal.display.cutout.emulation.hole
 #长型刘海屏#com.android.internal.display.cutout.emulation.tall
-#瀑布刘海屏#com.android.internal.display.cutout.emulation.waterfall"
+#瀑布刘海屏#com.android.internal.display.cutout.emulation.waterfall
+#急救信息#com.android.emergency
+#Android无障碍套件#com.google.android.marvin.talkback
+#SIM卡联系人#com.qualcomm.qti.simcontacts
+"
 #是否需要前提条件(条件命令写在子目录Condition.sh)(True/False)
 Install_Condition="False"
 #输出在description,不需输出为空即可
