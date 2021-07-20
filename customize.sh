@@ -81,7 +81,7 @@ fi
 [[ -d $config/script ]] && rm -rf $config/script
 mkdir $config/script
 cp -f $MODPATH/folder/script/* $config/script/
-cp -f $MODPATH/folder/script/config/* $config/script/config
+cp -f $MODPATH/folder/script/config/* $config/script/config/
 log "已生成脚本"
 echo "- 脚本位于Android/Optimization/script文件夹中"
 
