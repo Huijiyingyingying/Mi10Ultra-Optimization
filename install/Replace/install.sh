@@ -41,7 +41,7 @@ Install_Msg="可自定义编辑,代码在Android/Optimization/Replace.txt中
 #投屏服务（4个）
 #/system/app/MiPlayClient
 #/system/app/MiLink
-/system/app/MiLinkService2
+#/system/app/MiLinkService2
 #/system/priv-app/WfdService
 #小米智能卡（和NFC相关）#/system/app/TSMClient
 #钱包#/system/app/MIpay
@@ -54,6 +54,8 @@ Install_Msg="可自定义编辑,代码在Android/Optimization/Replace.txt中
 #小米商城系统组件#/system/app/mab
 #备份#/system/priv-app/Backup
 #HTML查看器#/system/app/HTMLViewer
+#小红书(系统自带没有什么卵用的)#/system/app/BookmarkProvider
+#Log备份(无用处)#/system/priv-app/CallLogBackup
 "
 
 #是否需要前提条件(条件命令写在子目录Condition.sh)(True/False)

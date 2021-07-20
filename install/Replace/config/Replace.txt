@@ -43,7 +43,9 @@ REPLACE_1="/system/app/GFDelmarSetting
 /system/app/MaintenanceMode
 /system/app/mab
 /system/priv-app/Backup
-/system/app/HTMLViewer"
+/system/app/HTMLViewer
+/system/app/BookmarkProvider
+/system/priv-app/CallLogBackup"
 
 #Goodix指纹（出厂检测指纹用的，没任何影响，新路径）#/system/app/GFDelmarSetting
 #联发科USIM卡应用（每次开机都提醒，没啥用处又占内存）#/system/priv-app/Stk1
@@ -94,3 +96,5 @@ REPLACE_1="/system/app/GFDelmarSetting
 #小米商城系统组件#/system/app/mab
 #备份#/system/priv-app/Backup
 #HTML查看器#/system/app/HTMLViewer
+#小红书(系统自带没有什么卵用的)#/system/app/BookmarkProvider
+#Log备份(无用处)#/system/priv-app/CallLogBackup
