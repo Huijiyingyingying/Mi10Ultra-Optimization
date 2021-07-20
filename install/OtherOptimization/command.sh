@@ -42,18 +42,14 @@ setprop persist.vendor.gnss.hpLocSetUI 1
 echo "setprop persist.vendor.gnss.hpLocSetUI 0" >> $MODPATH/uninstall.sh
 
 #减轻低内存Kill后台机制
-echo 'set_value() {
-  if [[ -f "$2" ]];then
-      chmod 0777 "$2" 2>/dev/null
-      chmod u+x "$2" 2>/dev/null
-      echo "$1" > "$2" && chmod 0644 "$2" || log "修改"$2"失败！"
-  fi
-}' >> $MODPATH/service.sh
-echo "set_value 0 /sys/module/lowmemorykiller/parameters/enable_lmk
+if [[ -f "$2" ]];then
+    chmod 0777 "$2" 2>/dev/null
+    chmod u+x "$2" 2>/dev/null
+    echo "$1" > "$2" && chmod 0644 "$2" || log "修改"$2"失败！"
+fi
+
+set_value 0 /sys/module/lowmemorykiller/parameters/enable_lmk
 set_value 0 /sys/module/lowmemorykiller/parameters/debug_level
-set_value 100 /proc/sys/vm/swappiness
-set_value 102400 /proc/sys/vm/extra_free_kbytes
-set_value 256  /proc/sys/vm/watermark_scale_factor" >> $MODPATH/service.sh
 
 #内存调控
 echo "ro.vendor.qti.sys.fw.bg_apps_limit=600
