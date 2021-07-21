@@ -2,8 +2,23 @@
 FILE="/data/adb/modules/Mi10Ultra-Optimization"
 config="/sdcard/Android/Optimization"
 
+get_choose() {
+	local choose
+	local branch
+	while :; do
+		choose="$(getevent -qlc 1 | awk '{ print $3 }')"
+		case "$choose" in
+		KEY_VOLUMEUP)  branch="0" ;;
+		KEY_VOLUMEDOWN)  branch="1" ;;
+		*)  continue ;;
+		esac
+		echo "$branch"
+		break
+	done
+}
+
 if [ ! -e $config/script/config/Replace.txt ]; then
-  log "检查到Replace.txt文件不存在，退出安装"
+  echo "检查到Replace.txt文件不存在，退出安装"
   exit 0
 fi
 

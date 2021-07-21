@@ -1,5 +1,5 @@
 #!/system/bin/sh
-FILE="$MODPATH/install/Replace/SUB"
+FILE="$MODPATH/install/Replace/Sub"
 config="/sdcard/Android/Optimization"
 
 source $MODPATH/function.sh
