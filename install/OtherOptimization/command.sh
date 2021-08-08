@@ -66,3 +66,12 @@ echo "ro.iorapd.enable=true
 iorapd.perfetto.enable=true
 iorapd.readahead.enable=true
 ro.vendor.perf.scroll_opt=true"  >> $MODPATH/system.prop
+
+#io调度优化（安卓上建议使用noop）
+echo noop > /sys/block/mmcblk0/queue/scheduler
+
+#进程可打开文件数优化
+echo 2390251 > /proc/sys/fs/file-max
+
+#预读优化
+echo 4096 > /sys/block/vda/queue/read_ahead_kb

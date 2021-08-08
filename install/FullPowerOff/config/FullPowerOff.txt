@@ -5,4 +5,4 @@ Power_Restore=95
 #达到执行禁止充电指令条件时,延迟这段时间,再执行指令(s=秒 m=分 h=小时)
 Power_Stop_Delay=5m
 #脚本循环运行延迟(s=秒 m=分 h=小时)
-Script_Delay=5s
+Script_Delay=1m

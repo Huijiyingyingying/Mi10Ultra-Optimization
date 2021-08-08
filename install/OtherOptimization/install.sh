@@ -16,7 +16,10 @@ VM虚拟堆大小(Dalvik优化)(提高RAM)
 加快安装应用速度
 加快dex2oat编译的速度
 开启iorap功能(加快应用冷启动)
-内存调控(减少杀后台的情况)"
+内存调控(减少杀后台的情况)
+io调度优化
+进程可打开文件数优化
+预读优化"
 #是否需要前提条件(条件命令写在子目录condition.sh)(True/False)
 Install_Condition="False"
 #输出在description,不需输出为空即可

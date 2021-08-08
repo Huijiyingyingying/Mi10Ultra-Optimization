@@ -42,3 +42,9 @@ Process_Start "com.eg.android.AlipayGphone"
 
 #com.netease.cloudmusic
 Process_Start "com.netease.cloudmusic"
+
+cp -af $FILE/script/KillProcess.sh $MODPATH/script/KillProcess.sh
+
+echo "chown root:root $FILE2/script/KillProcess.sh" >> $MODPATH/service.sh
+echo "chmod 777 $FILE2/script/KillProcess.sh" >> $MODPATH/service.sh
+echo "nohup $FILE2/script/KillProcess.sh &" >> $MODPATH/service.sh

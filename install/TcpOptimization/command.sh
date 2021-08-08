@@ -15,4 +15,10 @@ echo 'echo 1 > /proc/sys/net/ipv4/tcp_tw_reuse' >> $MODPATH/service.sh
 echo 'echo 0 > /proc/sys/net/ipv4/tcp_slow_start_after_idle' >> $MODPATH/service.sh
 echo 'echo 1048576 > /proc/sys/net/core/rmem_default' >> $MODPATH/service.sh
 echo 'echo 1048576 > /proc/sys/net/core/wmem_default' >> $MODPATH/service.sh
+echo 'ip route | while read r; do
+ip route change $r initcwnd 20;
+done' >> $MODPATH/service.sh
+echo'ip route | while read r; do
+ip route change $r initrwnd 40;
+done' >> $MODPATH/service.sh
 echo 'log "修改TCP参数成功"' >> $MODPATH/service.sh
