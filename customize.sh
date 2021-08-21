@@ -16,8 +16,8 @@ mktouch $config/install_log.txt
 #module.prop
 id="Mi10Ultra-Optimization"
 name="Mi10UltraOptimization"
-version="v5.3.0(21.08.08)"
-versionCode="20210808"
+version="v5.4.0(21.08.15)"
+versionCode="20210815"
 author="灰机嘤嘤嘤"
 description="Optimized only for Mi10Ultra. Installed features: "
 

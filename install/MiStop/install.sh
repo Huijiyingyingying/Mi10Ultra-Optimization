@@ -3,7 +3,7 @@
 #功能名字
 Install_Name="破解卡米"
 #安装时输出的信息
-Install_Msg="版本为:21.8.4 系统非此版本禁止安装
+Install_Msg="版本为:21.8.11 系统非此版本禁止安装
 防止精简系统软件导致的卡米,例如系统更新等"
 #是否需要前提条件(条件命令写在子目录Condition.sh)(True/False)
 Install_Condition="False"
